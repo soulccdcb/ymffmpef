@@ -3,7 +3,7 @@ MAINTAINER JiYun Tech Team <mboss0@163.com>
 
 ADD ./sources.list /etc/apt/sources.list
 
-RUN set -x && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138  && apt-get update && apt-get install -y --no-install-recommends  openssh-server tzdata build-essential bzip2  && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
+RUN set -x && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 112695A0E562B32A &&  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EF0F382A1A7B6500  && apt-get update && apt-get install -y --no-install-recommends  openssh-server tzdata build-essential bzip2  && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
 RUN mkdir /var/run/sshd && \
     rm /etc/localtime && \
     ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
